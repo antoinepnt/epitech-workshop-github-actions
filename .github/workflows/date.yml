@@ -27,5 +27,6 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Display date
-        run: echo Hello, world! Today is
-            date -d
+        run: |
+          echo Hello, world! Today is
+          date -d
