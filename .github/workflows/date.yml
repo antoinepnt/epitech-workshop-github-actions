@@ -29,4 +29,4 @@ jobs:
       - name: Display date
         run: |
           echo Hello, world! Today is
-          date -I
+          date "+%d-%m-%y %H:%M:%S"
