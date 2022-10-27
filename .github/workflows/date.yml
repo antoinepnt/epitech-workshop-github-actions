@@ -5,10 +5,15 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
-  push:
-    branches: [ "master" ]
+  issues:
+    types: [opened, edited, closed]
   pull_request:
-    branches: [ "master" ]
+    types: [ready_for_review]
+  gollum:
+    types: [created, edited, closed]
+  schedule:
+    - cron: '* * 1 * *'
+  
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -29,4 +34,4 @@ jobs:
       - name: Display date
         run: |
           echo Hello, world! Today is
-          date "+%d-%m-%y %H:%M:%S"
+          date "+%m-%d-%y %H:%M:%S"
